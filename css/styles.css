@@ -14,8 +14,6 @@
     --accent: #E7E9FC;
     --light: #F4F4FD;
     --color-btn: #ffffff;
-    --text-style: 'Roboto', sans-serif;
-    --text-title: 'Raleway', sans-serif;
 }
 
 /*---------------normalize class------------------*/
@@ -31,7 +29,10 @@ ul, ol {
     padding-left: 0;
 }
 
-img {display: block;}
+img {display: block;
+    max-width: 100%;
+    height: auto;
+}
 
 address {
     font-style: normal;
@@ -60,7 +61,7 @@ a {text-decoration: none;
 
 .body {
     background-color: var(--color-btn);
-    font-family: var(--text-style);
+    font-family: 'Roboto', sans-serif;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
@@ -70,8 +71,8 @@ a {text-decoration: none;
 .head {}
 
 .section {
-  padding-top: 120px;
-  padding-bottom: 120px;
+   padding-bottom: 120px;
+   padding-top: 120px;
 }
 .title {
     font-size: 36px;
@@ -143,7 +144,7 @@ a {text-decoration: none;
 
 .link-logo, .footer-link, .nav-logo,
 .footer-logo {
-    font-family: var(--text-title);
+    font-family: 'Raleway', sans-serif;
     font-weight: 800;
     font-size: 18px;
     line-height: 1.33;
@@ -219,7 +220,8 @@ padding: 188px;
    }
 
 /* -------------------------------------features------------------------------ */
-.features {
+.section.features {
+    padding-bottom: 0;
 }
 
 .feature-list {
@@ -229,7 +231,8 @@ padding: 188px;
 }
 
 .feature-item {
-width: calc(100% - 72px) / 4;
+display: inline-block;
+width: calc((100% - 72px) / 4);
 }
 
 .feature-item:not(:last-child) {
@@ -247,7 +250,7 @@ width: calc(100% - 72px) / 4;
 
 .feature-text {
     max-width: 264px;
-    color: var(text);
+    color: var(--text);
 }
 
 /* -----------------------------What are we doing ----------------------------*/
@@ -255,7 +258,7 @@ width: calc(100% - 72px) / 4;
 
   .works-list {
     display: flex;
-    font-weight: wrap;
+    flex-wrap: wrap;
     gap: 24px;
   }
 
@@ -321,7 +324,7 @@ width: calc(100% - 72px) / 4;
 .work-list {
     display: flex;
     justify-content: center;
-     margin-bottom: 72px;
+    margin-bottom: 72px;
 }
 
 .work-item {}
@@ -340,7 +343,7 @@ width: calc(100% - 72px) / 4;
 }
 
 .work-item {
-    width: calc(100% - 96px) / 5;
+   
 }
 .work-item:not(:last-child) {
     margin-right: 24px;
@@ -350,7 +353,6 @@ width: calc(100% - 72px) / 4;
     display: flex;
     flex-wrap: wrap;
     gap: 48px 24px;
-    outline: 2px solid tomato;
 }
 
 .cards-item {
@@ -361,6 +363,7 @@ width: calc(100% - 72px) / 4;
 
 .cards-description {
     padding: 32px 16px;
+    border: 1px solid var(--accent);
   }
 .link {}
 
