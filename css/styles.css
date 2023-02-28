@@ -1,3 +1,9 @@
+/* *,
+* ::before,
+* ::after {
+    box-sizing: inherit;
+} */
+
 :root {
     --dark: #2E2F42;
     --primary-brand: #4D5AE5;
@@ -12,22 +18,45 @@
     --text-title: 'Raleway', sans-serif;
 }
 
+/*---------------normalize class------------------*/
+
+h1, h2, h3, h4, h5, p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+ul, ol {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
+img {display: block;}
+
+address {
+    font-style: normal;
+}
+
+
 a {text-decoration: none;
 }
 
 .list {list-style: none;}
 
-.link {text-decoration: none;
-color: inherit;}
+.link {
+    text-decoration: none;
+    color: inherit;}
 
-.btn {
-    font-family: inherit;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 1.5;
-    letter-spacing: 0.04em;
-    cursor: pointer;
+/*-----------------------main class------------*/
+
+.container {
+    max-width: 1158px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0 auto;
 }
+
+
 
 .body {
     background-color: var(--color-btn);
@@ -36,18 +65,23 @@ color: inherit;}
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: var(--text);
-
 }
 
 .head {}
 
-.section {}
+.section {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
 .title {
     font-size: 36px;
     line-height: 1.11;
     letter-spacing: 0.02em;
     text-transform: capitalize;
     color: var(--dark);
+    text-align: center;
+
+    margin-bottom: 72px;
 }
 
 .subtitle {
@@ -57,8 +91,50 @@ color: inherit;}
     letter-spacing: 0.02em;
 }
 
+.btn {
+    display: flex;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    background-color: transparent;
+}
+ .center {
+    align-items: center;
+ }
+
+ .hide {
+     position: absolute;
+     width: 1px;
+     height: 1px;
+     margin: -1px;
+     padding: 0;
+     overflow: hidden;
+     border: 0;
+     clip: rect(0 0 0 0);
+ }
+
  /*------------------Navigation-----------------------*/
-.nav {}
+.head-container {
+    display: flex;
+    border-bottom: 1px solid var(--accent);
+}
+
+ .nav {
+    display: flex;
+ }
+
+.nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+
+  margin-left: 76px;
+}
 
 .nav-list .nav-link:hover, .nav-list .nav-link:focus,
 .contact-link:hover, .contact-list .contact-link:focus  {
@@ -91,6 +167,13 @@ color: inherit;}
     letter-spacing: 0.02em;
     color: var(--dark);
 }
+.contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+
+    margin-left: auto;
+}
 
 .contact-link {
     line-height: 1.5;
@@ -105,19 +188,30 @@ color: inherit;}
    /* -----------------------Section Hero------------------- */
    .section.hero {
 background-color: var(--dark);
+padding: 188px;
    }
 
   .slogan {
+    max-width: 496px;
+
     font-weight: 700;
     font-size: 56px;
     line-height: 1.07;
     letter-spacing: 0.02em;
     color: var(--color-btn);
+
+    margin: 0 auto 48px auto;
   }
 
    .hero-btn {
+    min-width: 116px;
+
     background-color: var(--primary-brand);
     color: var(--color-btn);
+    border-radius: 4px;
+
+    margin: 0 auto;
+    padding: 16px 32px;
    }
 
    .hero-btn:hover, .hero-btn:focus {
@@ -125,81 +219,110 @@ background-color: var(--dark);
    }
 
 /* -------------------------------------features------------------------------ */
-.features {}
-
-.hide {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    padding: 0;
-    overflow: hidden;
-    border: 0;
-    clip: rect(0 0 0 0);
+.features {
 }
 
 .feature-list {
+    display: flex;
+    width: 100%;
+    color: var(--dark);
+}
+
+.feature-item {
+width: calc(100% - 72px) / 4;
+}
+
+.feature-item:not(:last-child) {
+    margin-right: 24px;
+}
+
+.feature-subtitle {
     font-weight: 500;
     font-size: 20px;
     line-height: 1.2;
     letter-spacing: 0.02em;
     color: var(--dark);
-}
 
-.feature-item {
-
-}
-
-.feature-subtitle {
-    color: var(--dark);
 }
 
 .feature-text {
+    max-width: 264px;
     color: var(text);
 }
 
 /* -----------------------------What are we doing ----------------------------*/
   .works {}
 
-  .works-list {}
+  .works-list {
+    display: flex;
+    font-weight: wrap;
+    gap: 24px;
+  }
 
   .works-item {}
+
+  .image {
+     width: 100%; 
+  }
 
 /* -------------------------Our Team ----------------------------*/
   .team {
     background-color: var(--light);
   }
 
-  .team-list {}
+  .team-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 23px;
+  }
 
   .team-item {
     background-color: var(--color-btn);
   }
 
   .team-people {
-    color: var(--dark)
+    color: var(--dark);
+    text-align: center;
   }
 
   .team-profesion {
-     }
+    text-align: center;
+    }
+
+.team-card {
+    padding: 32px 16px;
+    }
 /* ------------------------Footer ----------------------------------*/
 .footer {
+    padding-top: 100px;
+    padding-bottom: 100px;
     background-color: var(--dark);
 }
 
-.footer-link {}
+.footer-link {
+
+}
 
 .footer-logo {
     color: var(--light);
 }
 
 .footer-text {
+    max-width: 264px;
     color: var(--accent);
+    margin-top: 16px;
 }
 
 /*---------------------------------------- our work -----------------------*/
 
-.work-list {}
+.section-work {
+    padding-top: 96px;
+}
+.work-list {
+    display: flex;
+    justify-content: center;
+     margin-bottom: 72px;
+}
 
 .work-item {}
 
@@ -210,19 +333,40 @@ background-color: var(--dark);
 .work-btn {
     color: var(--primary-brand);
     background-color: var(--accent);
+
+    border: 1px solid var(--accent);
+    border-radius: 4px;
+    padding: 12px 24px;
 }
 
-.cards-list {}
+.work-item {
+    width: calc(100% - 96px) / 5;
+}
+.work-item:not(:last-child) {
+    margin-right: 24px;
+}
 
-.cards-item {}
+.cards-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 48px 24px;
+    outline: 2px solid tomato;
+}
+
+.cards-item {
+  }
 
 .cards-link {
 }
 
+.cards-description {
+    padding: 32px 16px;
+  }
 .link {}
 
 .cards-subtitle {
     color: var(--dark);
+    margin-bottom: 8px;
 }
 
 .cards-text {
